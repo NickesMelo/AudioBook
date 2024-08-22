@@ -1,0 +1,54 @@
+.display-flex-align-justify-center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+body {
+    background-color: #A945FE;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#container-general {
+    min-width: 80vw;
+    min-height: 500px;
+    transform: translateY(50px);
+    flex-direction: column;
+    justify-content: space-evenly;
+    border: 1px solid black;
+}
+
+#containter-buttons{
+    width: 300px;
+    justify-content: space-evenly;
+}
+
+button {
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    
+    
+}
+
+button i {
+    font-size: 80px;
+}
+
+#button-skip-back i, #button-skip-advance i{
+    font-size: 50px;
+}
+
+.transparent-element {
+    opacity: 0.5;
+}
+
+button i:hover{
+    opacity: 1;
+}
+
+#button-play i:hover{
+    opacity: 0.5;
+}
+

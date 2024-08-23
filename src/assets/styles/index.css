@@ -29,7 +29,8 @@ h1 {
 
 #container-buttons {
     width: 300px;
-    justify-content: space-evenly;
+    justify-content: space-between;
+
 }
 
 button {
@@ -39,13 +40,46 @@ button {
     cursor: pointer;
 }
 
-button i {
+#button-play i {
     font-size: 80px;
+    /* display: none; */
 }
 
 #button-skip-back i, #button-skip-advance i {
     font-size: 50px;
     opacity: 0.5;
+}
+
+#button-pause{
+    font-size: 80px;
+    left: 508px;
+    position: absolute;
+    display: none;
+}
+
+#button-stop {
+    font-size: 80px;
+    left: 508px;
+    position: absolute;
+    display: none;
+}
+
+#button-volume-high{
+    font-size: 40px; 
+    position: absolute;
+    top: 1px;
+    bottom: 500px;
+    right: 10px;
+    /* display: none; */
+}
+
+#button-volume-mute {
+    font-size: 40px; 
+    position: absolute;
+    top: 1px;
+    bottom: 500px;
+    right: 10px;
+    display: none;
 }
 
 #button-skip-back i:hover{
@@ -57,5 +91,20 @@ button i {
 }
 
 #button-play i:hover {
+    opacity: 0.5;
+}
+
+#button-volume-high:hover{
+    opacity: 0.5;
+}
+
+#button-volume-mute:hover{
+    opacity: 0.5;
+}
+
+#button-pause {
+    opacity: 0.5;
+}
+#button-stop {
     opacity: 0.5;
 }

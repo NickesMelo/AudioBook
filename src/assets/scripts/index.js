@@ -17,6 +17,16 @@ function initialize() {
     console.log("Inicialização do projeto no clean code");
 }
 
+function togglePlayPauseButtons() {
+    if (audioControls.paused) {
+        buttonPlay.classList.remove("display-none");
+        buttonPause.classList.add("display-none");
+    } else {
+        buttonPlay.classList.add("display-none");
+        buttonPause.classList.remove("display-none");
+    }
+}
+
 function setupEventListeners() {
     if(buttonPlay) {
         buttonPlay.addEventListener("click", playAudio);

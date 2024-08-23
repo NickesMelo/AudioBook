@@ -4,6 +4,10 @@
     justify-content: center;
 }
 
+.display-none{
+    display: none;
+}
+
 body {
     background-color: #A945FE;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -40,9 +44,8 @@ button {
     cursor: pointer;
 }
 
-#button-play i {
+#button-play {
     font-size: 80px;
-    /* display: none; */
 }
 
 #button-skip-back i, #button-skip-advance i {
@@ -52,9 +55,8 @@ button {
 
 #button-pause{
     font-size: 80px;
-    left: 508px;
+    left: 408px;
     position: absolute;
-    display: none;
 }
 
 #button-stop {
@@ -108,3 +110,17 @@ button {
 #button-stop {
     opacity: 0.5;
 }
+
+#audio-controls::-webkit-media-controls-play-button,
+#audio-controls::-webkit-media-controls-pause-button {
+    display: none;
+}
+
+#audio-controls::-webkit-media-controls-volume-control-container {
+    display: none;
+}   
+
+#audio-controls::-webkit-media-controls-mute-button {
+    display: none;
+}
+

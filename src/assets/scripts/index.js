@@ -17,6 +17,27 @@ function initialize() {
     console.log("Inicialização do projeto no clean code");
 }
 
+function playAudio() {
+    if(audioControls){
+       audioControls.play().then(() => {
+        togglePlayPauseButtons();
+       }).catch(error => {
+            console.error("Erro ao tentar reproduzir o áudio", error);
+       })
+    } else {
+        console.log("Áudio não encontrado");
+    }
+}
+
+function pauseAudio() {
+    if(audioControls) {
+        audioControls.pause();
+        togglePlayPauseButtons();
+    } else {
+        console.error("Áudio não encontrado");
+    }
+}
+
 function togglePlayPauseButtons() {
     if (audioControls.paused) {
         buttonPlay.classList.remove("display-none");

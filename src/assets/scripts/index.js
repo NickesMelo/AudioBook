@@ -2,11 +2,11 @@ const audioControls = document.querySelector("#audio-controls");
 const buttonPlay = document.querySelector("#button-play");
 const buttonPause = document.querySelector("#button-pause");
 
-
 function onDOMContentLoaded() {
     logDOMLoaded();
     initialize();
-   
+    playAudio()
+    setupEventListeners();
 }
 
 function logDOMLoaded() {

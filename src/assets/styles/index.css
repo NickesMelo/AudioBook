@@ -33,8 +33,8 @@ h1 {
 
 #container-buttons {
     width: 300px;
+    height: 92px;
     justify-content: space-between;
-
 }
 
 button {
@@ -55,7 +55,7 @@ button {
 
 #button-pause{
     font-size: 80px;
-    left: 408px;
+    left: 507px;
     position: absolute;
 }
 
@@ -123,4 +123,3 @@ button {
 #audio-controls::-webkit-media-controls-mute-button {
     display: none;
 }
-

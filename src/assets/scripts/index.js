@@ -17,7 +17,6 @@ function initialize() {
     console.log("Inicialização do projeto no clean code");
 }
 
-
 function playAudio() {
     if(audioControls){
        audioControls.play().then(() => {

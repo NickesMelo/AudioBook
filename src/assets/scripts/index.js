@@ -32,7 +32,7 @@ function playAudio() {
     if (audioControls) {
         audioControls.play().then(() => {
 
-            togglePlayPauseButtons();
+            updatePlayPauseButtons();
             toggleHighMuteVolume();
        }).catch(error => {
             console.error("Erro ao tentar reproduzir o áudio", error);
@@ -46,7 +46,7 @@ function playAudio() {
 function pauseAudio() {
     if (audioControls) {
         audioControls.pause();
-        togglePlayPauseButtons();
+        updatePlayPauseButtons();
         toggleHighMuteVolume();
     } else {
         console.error("Áudio não encontrado");
@@ -57,7 +57,7 @@ function stopAudio() {
     if(audioControls) {
         audioControls.pause();
         audioControls.currentTime = 0;
-        togglePlayPauseButtons();
+        updatePlayPauseButtons();
     } else {
         console.error("Elemento de áudio não encontrado");
     }
@@ -101,7 +101,7 @@ function incrementSoundTrack() {
         console.log("Áudio Book Dom Casmurro Finalizado!");
         soundTrackCurrent = 1; 
     }
-    updateChapterTitles();
+    setChapterTitles();
 }
 
 function decrementSoudTrack() {
@@ -113,10 +113,10 @@ function decrementSoudTrack() {
     } else {
         console.error("Elemento de´Áudio não encontrado");
     }
-    updateChapterTitles();
+    setChapterTitles();
 }
 
-function togglePlayPauseButtons() {
+function updatePlayPauseButtons() {
     if (audioControls.paused) {
         buttonPlay.classList.remove("display-none");
         buttonPause.classList.add("display-none");
@@ -136,9 +136,9 @@ function toggleHighMuteVolume() {
     }
 }
 
-function updateChapterTitles() {
+function setChapterTitles() {
     const chapterNumber = soundTrackCurrent;
-    titleAudioBook.innerHTML = `om Casmurro - Capítulo ${chapterNumber}`;
+    titleAudioBook.innerHTML = `Dom Casmurro - Capítulo ${chapterNumber}`;
     titleChapter.innerHTML = `Dom Casmurro - Capitulo ${chapterNumber}`;
 } 
 

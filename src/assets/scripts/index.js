@@ -101,7 +101,7 @@ function incrementSoundTrack() {
         console.log("Áudio Book Dom Casmurro Finalizado!");
         soundTrackCurrent = 1; 
     }
-    setChapterTitles();
+    updateChapterTitles();
 }
 
 function decrementSoudTrack() {
@@ -113,7 +113,7 @@ function decrementSoudTrack() {
     } else {
         console.error("Elemento de´Áudio não encontrado");
     }
-    setChapterTitles();
+    updateChapterTitles();
 }
 
 function togglePlayPauseButtons() {
@@ -136,7 +136,7 @@ function toggleHighMuteVolume() {
     }
 }
 
-function setChapterTitles() {
+function updateChapterTitles() {
     const chapterNumber = soundTrackCurrent;
     titleAudioBook.innerHTML = `om Casmurro - Capítulo ${chapterNumber}`;
     titleChapter.innerHTML = `Dom Casmurro - Capitulo ${chapterNumber}`;

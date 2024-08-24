@@ -59,7 +59,6 @@ button {
     background-color: transparent;
 }
 
-
 #button-play {
     font-size: 80px;
 }
@@ -105,18 +104,19 @@ button {
     opacity: 0.5;
 }
 
+#button-pause i:hover {
+    opacity: 0.5;
+}
+
+#button-stop i:hover {
+    opacity: 0.5;
+}
+
 #button-volume-high:hover{
     opacity: 0.5;
 }
 
 #button-volume-mute:hover{
-    opacity: 0.5;
-}
-
-#button-pause {
-    opacity: 0.5;
-}
-#button-stop {
     opacity: 0.5;
 }
 
@@ -133,7 +133,6 @@ button {
     display: none;
 }
 
-
 /* Estilo para os botões de controle de áudio */
 #button-play,
 #button-pause,
@@ -148,7 +147,6 @@ button {
     background-color: transparent;
 }
 
-/* Adiciona um efeito ao botão quando desabilitado */
 button:disabled {
     opacity: 0.5;
     cursor: not-allowed;

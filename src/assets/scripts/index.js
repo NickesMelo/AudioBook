@@ -25,13 +25,14 @@ function logDOMLoaded() {
 }
 
 function initialize() {
-    console.log("Inicialização do projeto no clean code");
+    audioControls.preload = "auto";
 }
 
 function playAudio() {
     if (audioControls) {
+        
         audioControls.play().then(() => {
-
+            audioControls.preload = "auto";
             updatePlayPauseButtons();
             toggleHighMuteVolume();
        }).catch(error => {
@@ -139,7 +140,7 @@ function toggleHighMuteVolume() {
 function setChapterTitles() {
     const chapterNumber = soundTrackCurrent;
     titleAudioBook.innerHTML = `Dom Casmurro - Capítulo ${chapterNumber}`;
-    titleChapter.innerHTML = `Dom Casmurro - Capitulo ${chapterNumber}`;
+    titleChapter.innerHTML = `Dom Casmurro - Capítulo ${chapterNumber}`;
 } 
 
 function setupEventListeners() {

@@ -55,15 +55,10 @@ button {
 
 #button-pause{
     font-size: 80px;
-    /* left: 507px;
-    position: absolute; */
 }
 
 #button-stop {
     font-size: 80px;
-    left: 508px;
-    /* position: absolute;
-    display: none; */
 }
 
 #button-volume-high{

@@ -7,6 +7,7 @@ const buttonHighVolume = document.querySelector("#button-volume-high");
 const buttonMuteVolume = document.querySelector("#button-volume-mute");
 const buttonNextSoudTrack = document.querySelector("#button-skip-advance");
 const buttonReturnSoudTrack = document.querySelector("#button-skip-back");
+const titleAudioBook = document.querySelector("title");
 
 let soundTrackCurrent = 1;
 
@@ -86,11 +87,29 @@ function nextSoudTrack() {
     playAudio();
 }
 
+function returnSoudTrack() {
+    decrementSoudTrack();
+    audioSource.setAttribute("src", `../public/audios/domcasmurro_${soundTrackCurrent}_assis.mp3`);
+    audioControls.load();
+    playAudio();
+}
+
 function incrementSoundTrack() {
     soundTrackCurrent++;
     if (soundTrackCurrent > 30) {
         console.log("Áudio Book Dom Casmurro Finalizado!");
         soundTrackCurrent = 1; 
+    }
+}
+
+function decrementSoudTrack() {
+    soundTrackCurrent--;
+    if (soundTrackCurrent > 30) {
+        soundTrackCurrent = 1; 
+    } else if (soundTrackCurrent < 1) {
+        soundTrackCurrent = 30;
+    } else {
+        console.error("Elemento de´Áudio não encontrado");
     }
 }
 

@@ -2,6 +2,7 @@ const audioControls = document.querySelector("#audio-controls");
 const audioSource = audioControls.querySelector("source");
 const buttonPlay = document.querySelector("#button-play");
 const buttonPause = document.querySelector("#button-pause");
+const buttonStop = document.querySelector("#button-stop");
 const buttonHighVolume = document.querySelector("#button-volume-high");
 const buttonMuteVolume = document.querySelector("#button-volume-mute");
 const buttonNextSoudTrack = document.querySelector("#button-skip-advance");
@@ -13,6 +14,7 @@ function onDOMContentLoaded() {
     logDOMLoaded();
     initialize();
     playAudio();
+    stopAudio()
     setupEventListeners();
 }
 
@@ -27,9 +29,9 @@ function initialize() {
 function playAudio() {
     if (audioControls) {
         audioControls.play().then(() => {
+
             togglePlayPauseButtons();
             toggleHighMuteVolume();
-            console.log("Play clicado")
        }).catch(error => {
             console.error("Erro ao tentar reproduzir o áudio", error);
        });
@@ -46,6 +48,16 @@ function pauseAudio() {
         toggleHighMuteVolume();
     } else {
         console.error("Áudio não encontrado");
+    }
+}
+
+function stopAudio() {
+    if(audioControls) {
+        audioControls.pause();
+        audioControls.currentTime = 0;
+        togglePlayPauseButtons();
+    } else {
+        console.error("Elemento de áudio não encontrado");
     }
 }
 
@@ -108,6 +120,9 @@ function setupEventListeners() {
     }
     if (buttonPause) {
         buttonPause.addEventListener("click", pauseAudio);
+    }
+    if(buttonStop) {
+        buttonStop.addEventListener("click", stopAudio);
     }
     if (buttonMuteVolume) {
         buttonMuteVolume.addEventListener("click", muteVolume);

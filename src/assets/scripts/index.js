@@ -1,13 +1,18 @@
 const audioControls = document.querySelector("#audio-controls");
+const audioSource = audioControls.querySelector("source");
 const buttonPlay = document.querySelector("#button-play");
 const buttonPause = document.querySelector("#button-pause");
 const buttonHighVolume = document.querySelector("#button-volume-high");
 const buttonMuteVolume = document.querySelector("#button-volume-mute");
+const buttonNextSoudTrack = document.querySelector("#button-skip-advance");
+const buttonReturnSoudTrack = document.querySelector("#button-skip-back");
+
+let soundTrackCurrent = 1;
 
 function onDOMContentLoaded() {
     logDOMLoaded();
     initialize();
-    playAudio()
+    playAudio();
     setupEventListeners();
 }
 
@@ -20,20 +25,22 @@ function initialize() {
 }
 
 function playAudio() {
-    if(audioControls){
-       audioControls.play().then(() => {
-        togglePlayPauseButtons();
-        toggleHighMuteVolume();
+    if (audioControls) {
+        audioControls.play().then(() => {
+            togglePlayPauseButtons();
+            toggleHighMuteVolume();
+            console.log("Play clicado")
        }).catch(error => {
             console.error("Erro ao tentar reproduzir o áudio", error);
-       })
+       });
     } else {
         console.log("Áudio não encontrado");
     }
+    
 }
 
 function pauseAudio() {
-    if(audioControls) {
+    if (audioControls) {
         audioControls.pause();
         togglePlayPauseButtons();
         toggleHighMuteVolume();
@@ -43,7 +50,7 @@ function pauseAudio() {
 }
 
 function highVolume() {
-    if(audioControls) {
+    if (audioControls) {
         audioControls.muted = false;
         toggleHighMuteVolume();
     } else {
@@ -52,11 +59,26 @@ function highVolume() {
 }
 
 function muteVolume() {
-    if(audioControls) {
+    if (audioControls) {
         audioControls.muted = true;
-        toggleHighMuteVolume()
+        toggleHighMuteVolume();
     } else {
         console.error("Elemento de áudio não encontrado");
+    }
+}
+
+function nextSoudTrack() {
+    incrementSoundTrack();
+    audioSource.setAttribute("src", `../public/audios/domcasmurro_${soundTrackCurrent}_assis.mp3`);
+    audioControls.load();
+    playAudio();
+}
+
+function incrementSoundTrack() {
+    soundTrackCurrent++;
+    if (soundTrackCurrent > 30) {
+        console.log("Áudio Book Dom Casmurro Finalizado!");
+        soundTrackCurrent = 1; 
     }
 }
 
@@ -71,7 +93,7 @@ function togglePlayPauseButtons() {
 }
 
 function toggleHighMuteVolume() {
-    if(audioControls.muted == true){
+    if (audioControls.muted) {
         buttonHighVolume.classList.remove("display-none");
         buttonMuteVolume.classList.add("display-none");
     } else {
@@ -81,17 +103,23 @@ function toggleHighMuteVolume() {
 }
 
 function setupEventListeners() {
-    if(buttonPlay) {
+    if (buttonPlay) {
         buttonPlay.addEventListener("click", playAudio);
     }
-    if(buttonPause) {
+    if (buttonPause) {
         buttonPause.addEventListener("click", pauseAudio);
     }
-    if(buttonMuteVolume) {
-        buttonMuteVolume.addEventListener("click", muteVolume,)
+    if (buttonMuteVolume) {
+        buttonMuteVolume.addEventListener("click", muteVolume);
     }
-    if(buttonHighVolume) {
+    if (buttonHighVolume) {
         buttonHighVolume.addEventListener("click", highVolume);
+    }
+    if (buttonNextSoudTrack) {
+        buttonNextSoudTrack.addEventListener("click", nextSoudTrack);
+    }
+    if (buttonReturnSoudTrack) {
+        buttonReturnSoudTrack.addEventListener("click", returnSoudTrack);
     }
 }
 

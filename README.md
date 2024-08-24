@@ -26,12 +26,12 @@ Este é um projeto de um audiobook do clássico da literatura brasileira "Dom Ca
 
 ## Como Usar
 
-    1. Clone o repositório em sua máquina local:
+1. Clone o repositório em sua máquina local:
 ```bash
     git clone https://github.com/NickesMelo/AudioBook
 ```
-    2. Navegue até o diretório do projeto:
+2. Navegue até o diretório do projeto:
 ```bash
     cd AudioBook
 ```
-    3. Abra o arquivo index.html em seu navegador preferido.
+3. Abra o arquivo index.html em seu navegador preferido.

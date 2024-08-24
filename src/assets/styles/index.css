@@ -26,9 +26,11 @@ header {
 }
 
 h1 {
-    font-size: 26px;
     font-weight: 600;
     padding: 10px;
+    font-size: 1.5rem;
+    text-align: center;
+    margin-top: 20px;
 }
 
 #container-buttons {
@@ -43,6 +45,20 @@ button {
     padding: 0;
     cursor: pointer;
 }
+
+#button-play,
+#button-pause,
+#button-stop,
+#button-volume-high,
+#button-volume-mute,
+#button-skip-advance,
+#button-skip-back {
+    cursor: pointer;
+    padding: 10px;
+    border: none;
+    background-color: transparent;
+}
+
 
 #button-play {
     font-size: 80px;
@@ -115,4 +131,32 @@ button {
 
 #audio-controls::-webkit-media-controls-mute-button {
     display: none;
+}
+
+
+/* Estilo para os botões de controle de áudio */
+#button-play,
+#button-pause,
+#button-stop,
+#button-volume-high,
+#button-volume-mute,
+#button-skip-advance,
+#button-skip-back {
+    cursor: pointer;
+    padding: 10px;
+    border: none;
+    background-color: transparent;
+}
+
+/* Adiciona um efeito ao botão quando desabilitado */
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Estilo geral do título do capítulo */
+#h1-title-chapter {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-top: 20px;
 }

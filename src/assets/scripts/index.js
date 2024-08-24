@@ -7,6 +7,7 @@ const buttonHighVolume = document.querySelector("#button-volume-high");
 const buttonMuteVolume = document.querySelector("#button-volume-mute");
 const buttonNextSoudTrack = document.querySelector("#button-skip-advance");
 const buttonReturnSoudTrack = document.querySelector("#button-skip-back");
+const titleChapter = document.querySelector("#h1-title-chapter");
 const titleAudioBook = document.querySelector("title");
 
 let soundTrackCurrent = 1;
@@ -100,6 +101,7 @@ function incrementSoundTrack() {
         console.log("Áudio Book Dom Casmurro Finalizado!");
         soundTrackCurrent = 1; 
     }
+    setChapterTitles();
 }
 
 function decrementSoudTrack() {
@@ -111,6 +113,7 @@ function decrementSoudTrack() {
     } else {
         console.error("Elemento de´Áudio não encontrado");
     }
+    setChapterTitles();
 }
 
 function togglePlayPauseButtons() {
@@ -132,6 +135,12 @@ function toggleHighMuteVolume() {
         buttonMuteVolume.classList.remove("display-none");
     }
 }
+
+function setChapterTitles() {
+    const chapterNumber = soundTrackCurrent;
+    titleAudioBook.innerHTML = `om Casmurro - Capítulo ${chapterNumber}`;
+    titleChapter.innerHTML = `Dom Casmurro - Capitulo ${chapterNumber}`;
+} 
 
 function setupEventListeners() {
     if (buttonPlay) {

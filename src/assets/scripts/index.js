@@ -84,14 +84,14 @@ function muteVolume() {
 
 function nextSoudTrack() {
     incrementSoundTrack();
-    audioSource.setAttribute("src", `../public/audios/domcasmurro_${soundTrackCurrent}_assis.mp3`);
+    audioSource.setAttribute("src", `./public/audios/domcasmurro_${soundTrackCurrent}_assis.mp3`);
     audioControls.load();
     playAudio();
 }
 
 function returnSoudTrack() {
     decrementSoudTrack();
-    audioSource.setAttribute("src", `../public/audios/domcasmurro_${soundTrackCurrent}_assis.mp3`);
+    audioSource.setAttribute("src", `./public/audios/domcasmurro_${soundTrackCurrent}_assis.mp3`);
     audioControls.load();
     playAudio();
 }
@@ -112,7 +112,7 @@ function decrementSoudTrack() {
     } else if (soundTrackCurrent < 1) {
         soundTrackCurrent = 30;
     } else {
-        console.error("Elemento de´Áudio não encontrado");
+        console.error("Elemento de Áudio não encontrado");
     }
     setChapterTitles();
 }

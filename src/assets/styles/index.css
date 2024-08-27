@@ -11,6 +11,7 @@
 body {
     background-color: #A945FE;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    overflow-y: hidden ;
 }
 
 #container-general {
@@ -19,6 +20,7 @@ body {
     transform: translateY(30px);
     flex-direction: column;
     justify-content: space-between;
+    position: relative;
 }
 
 header {
@@ -76,20 +78,13 @@ button {
     font-size: 80px;
 }
 
-#button-volume-high{
-    font-size: 40px; 
-    position: absolute;
-    top: 1px;
-    bottom: 500px;
-    right: 10px;
-}
-
+#button-volume-high, 
 #button-volume-mute {
     font-size: 40px; 
     position: absolute;
-    top: 1px;
-    bottom: 500px;
+    top: 10px;
     right: 10px;
+    z-index: 1000;
 }
 
 #button-skip-back i:hover{
@@ -133,7 +128,6 @@ button {
     display: none;
 }
 
-/* Estilo para os botões de controle de áudio */
 #button-play,
 #button-pause,
 #button-stop,
@@ -152,9 +146,9 @@ button:disabled {
     cursor: not-allowed;
 }
 
-/* Estilo geral do título do capítulo */
 #h1-title-chapter {
     font-size: 1.5rem;
     text-align: center;
-    margin-top: 20px;
+    margin-top: 50px;
+    padding-right: 40px;
 }

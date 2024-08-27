@@ -7,7 +7,7 @@ const buttonHighVolume = document.querySelector("#button-volume-high");
 const buttonMuteVolume = document.querySelector("#button-volume-mute");
 const buttonNextSoudTrack = document.querySelector("#button-skip-advance");
 const buttonReturnSoudTrack = document.querySelector("#button-skip-back");
-const titleChapter = document.querySelector("#h1-title-chapter");
+const titleH2Chapter = document.querySelector("#h2-title-chapter");
 const titleAudioBook = document.querySelector("title");
 
 let soundTrackCurrent = 1;
@@ -139,8 +139,8 @@ function toggleHighMuteVolume() {
 
 function setChapterTitles() {
     const chapterNumber = soundTrackCurrent;
-    titleAudioBook.innerHTML = `Dom Casmurro - Capítulo ${chapterNumber}`;
-    titleChapter.innerHTML = `Dom Casmurro - Capítulo ${chapterNumber}`;
+    titleAudioBook.innerHTML = `Capítulo ${chapterNumber}`;
+    titleH2Chapter.innerHTML = `Capítulo ${chapterNumber}`;
 } 
 
 function setupEventListeners() {

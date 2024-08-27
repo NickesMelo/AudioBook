@@ -155,7 +155,7 @@ button:disabled {
     cursor: not-allowed;
 }
 
-@media (max-width: 360px) {
+@media (max-width: 480px) {
     #container-general {
         min-width: 60vw;
         min-height: 200px;
